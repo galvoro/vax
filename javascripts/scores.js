@@ -548,7 +548,7 @@ function drawNavButtons() {
         .text("New Scenario")
         .style("cursor", "pointer")
         .style("font-size", "40px")
-        .on("click", function() {window.location.href = "/scenario"})
+        .on("click", function() {window.location.href = "scenario.html"})
         .on("mouseover", function() {
             d3.select(this).style("fill", "#2692F2")
         })
@@ -556,73 +556,6 @@ function drawNavButtons() {
             d3.select(this).style("fill", "#707070")
         })
 
-    // share buttons
-    var twitterText = "https://twitter.com/intent/tweet?original_referer=http%3A%2F%2F.vax.herokuapp.com&text=I just stopped an epidemic in its tracks! Can you can save more than " + newSaves + "people on " + difficulty + "? Fight the outbreak at&url=http%3A%2F%2Fvax.herokuapp.com";
-    var facebookText = "http://www.facebook.com/sharer.php?s=100&p[title]=Vax! | Gamifying Epidemic Prevention&p[summary]=I just stopped an epidemic in its tracks! Can you save more than " + newSaves + "people on " + difficulty + "?&p[url]=http://vax.herokuapp.com";
-
-    d3.select(".scoreSVG").append("image")
-        .attr("x", 830 - 218)
-        .attr("y", 65)
-        .attr("height", "50px")
-        .attr("width", "50px")
-        .attr("xlink:href", "images/facebook_icon.png")
-        .attr("class", "shareIcon")
-        .attr("id", "facebook")
-        .style("padding", "12px 7px 0px 7px")
-        .style("width", "25px")
-        .style("cursor", "pointer")
-        .attr("opacity", 0)
-        .on("click", function() {
-            window.location.href = facebookText;
-        })
-
-    d3.select(".scoreSVG").append("image")
-        .attr("x", 905 - 218)
-        .attr("y", 65)
-        .attr("height", "50px")
-        .attr("width", "50px")
-        .attr("xlink:href", "images/twitter_icon.png")
-        .attr("class", "shareIcon")
-        .attr("id", "twitter")
-        .style("padding", "12px 7px 0px 7px")
-        .style("width", "25px")
-        .attr("opacity", 0)
-        .style("cursor", "pointer")
-        .on("click", function() {
-            window.location.href = twitterText;
-        })
-
-    d3.select(".scoreSVG").append("image")
-        .attr("x", 985 - 218)
-        .attr("y", 65)
-        .attr("height", "50px")
-        .attr("width", "50px")
-        .attr("xlink:href", "images/googleplus_icon.png")
-        .attr("class", "shareIcon")
-        .attr("id", "g+")
-        .attr("opacity", 0)
-        .style("padding", "12px 7px 0px 7px")
-        .style("width", "25px")
-        .style("cursor", "pointer")
-        .on("click", function() {
-            window.location.href = "https://plus.google.com/share?url=http://vax.herokuapp.com";
-        })
-
-    d3.select(".scoreSVG").append("text")
-        .attr("x", 790 - 200)
-        .attr("y", 50)
-        .style("font-family", "Nunito")
-        .style("font-size", "40px")
-        .style("font-weight", "500")
-        .style("cursor", "pointer")
-        .style("fill", "#707070")
-        .text("Share ▾")
-        .on("click", function() {
-            d3.selectAll(".shareIcon")
-                .transition()
-                .duration(500)
-                .attr("opacity", 0.45)
-        })
 }
 
 
@@ -630,7 +563,7 @@ function retryScenario() {
     $.cookie.json = true;
     var currentGameCookie = {scenario: scenarioTitle, difficulty: difficulty, speedMode:realTimeMode, refusers: refuserDifficulty[difficultyIndex], vax: vaxDifficulty[difficultyIndex], outbreaks: independentOutbreakDifficulty[difficultyIndex], transmissionRate: transmissionRate, recoveryRate: recoveryRate}
     $.cookie('vaxCurrentGame', JSON.stringify(currentGameCookie), { expires: 365, path: '/' })
-    window.location.href = '/scenarioGame'
+    window.location.href = 'scenarioGame.html'
 
 }
 

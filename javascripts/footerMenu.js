@@ -9,7 +9,7 @@ function initFooter() {
         .text("VAX!")
         .style("cursor", "pointer")
         .on("click", function() {
-            window.location.href = '/'
+            window.location.href = 'index.html'
         })
 
 
@@ -24,7 +24,7 @@ function initFooter() {
         .style("font-family", "Nunito")
         .style("font-size", "16px")
         .on("click", function() {
-            window.location.href = '/faq.html'
+            window.location.href = 'faq.html'
         })
         .on("mouseover", function() {
             d3.select(this).style("color", "#2692F2")
@@ -40,7 +40,7 @@ function initFooter() {
         .style("font-family", "Nunito")
         .style("font-size", "20px")
         .on("click", function() {
-            window.location.href = '/game.html'
+            window.location.href = 'game.html'
         })
         .on("mouseover", function() {
             d3.select(this).style("color", "#2692F2")
@@ -56,7 +56,7 @@ function initMainFooter() {
         .text("VAX!")
         .style("cursor", "pointer")
         .on("click", function() {
-            window.location.href = '/'
+            window.location.href = 'index.html'
         })
 //
 //    d3.select("body").append("div")

@@ -91,131 +91,6 @@ var weakTieLinks = getWeakTieLinks();
 
 var backArrow, nextArrow;
 
-// var homeSVG = d3.select("body").append("svg")
-//     .attr("class", "homeSVG")
-//     .attr({
-//         "width": "100%",
-//         "height": "87.5%"  //footer takes ~12.5% of the page
-//     })
-//     .attr("viewBox", "0 0 " + width + " " + height )
-//     .attr("pointer-events", "all")
-//     .style("position", "absolute")
-
-// generateFrontGraph();
-// initMainFooter();
-
-// d3.select(".homeSVG").append("text")
-//     .attr("class", "homeTitle")
-//     .attr("x", 390)
-//     .attr("y", 265)
-//     .attr("fill", "#707070")
-//     .text("VAX!")
-
-// d3.select(".homeSVG").append("text")
-//     .attr("class", "homeText")
-//     .attr("x", 275)
-//     .attr("y", 315)
-//     .attr("fill", "#707070")
-//     .text("A game about epidemic prevention.")
-
-// d3.select(".homeSVG").append("text")
-//     .attr("class", "homeTutorial")
-//     .attr("x", 802)
-//     .attr("y", 525)
-//     .attr("fill", "#707070")
-//     .on("mouseover", function(d) {
-
-//         d3.select(this).style("fill", "#2692F2")
-
-//     })
-//     .on("mouseout", function(d) {
-//         d3.select(this).style("fill", "#707070")
-//     })
-//     .text("Tour >")
-//     .on("click", function() {
-//         homeToTutorial();
-//     })
-
-//d3.select(".homeSVG").append("text")
-//    .attr("x", 786)
-//    .attr("y", 525)
-//    .style("cursor", "pointer")
-//    .attr("fill", "#707070")
-//    .attr("font-size", "23px")
-//    .style("font-family", "Nunito")
-//    .style("fill", "#707070")
-//    .style("font-weight", 500)
-//    .on("mouseover", function(d) {
-//
-//        d3.select(this).style("fill", "#2692F2")
-//
-//    })
-//    .on("mouseout", function(d) {
-//        d3.select(this).style("fill", "#707070")
-//    })
-//    .on("click", function() {
-//        window.location.href = "/faq";
-//    })
-//    .text("About >")
-
-// d3.select(".homeSVG").append("text")
-//     .attr("class", "homeGame")
-//     .attr("x", 744)
-//     .attr("y", 558)
-//     .attr("fill", "#707070")
-//     .text("Full Game >")
-//     .on("mouseover", function(d) {
-
-//         d3.select(this).style("fill", "#2692F2")
-
-//     })
-//     .on("mouseout", function(d) {
-//         d3.select(this).style("fill", "#707070")
-//     })
-//     .on("click", function() {
-//         window.location.href = '/game.html'
-//     })
-
-// d3.select(".homeSVG").append("text")
-//     .attr("class", "homeHI")
-//     .attr("x", 692)
-//     .attr("y", 590)
-//     .attr("fill", "#707070")
-//     .attr("font-size", "23px")
-//     .style("font-family", "Nunito")
-//     .style("cursor", "pointer")
-//     .text("Herd Immunity >")
-//     .on("mouseover", function(d) {
-
-//         d3.select(this).style("fill", "#2692F2")
-
-//     })
-//     .on("mouseout", function(d) {
-//         d3.select(this).style("fill", "#707070")
-//     })
-//     .on("click", function() {
-//         window.location.href = '/herdImmunity'
-//     })
-
-// d3.select(".homeSVG").append("text")
-//     .attr("x", 718)
-//     .attr("y", 612)
-//     .style("cursor", "pointer")
-//     .attr("fill", "#707070")
-//     .on("mouseover", function(d) {
-
-//         d3.select(this).style("fill", "#2692F2")
-
-//     })
-//     .on("mouseout", function(d) {
-//         d3.select(this).style("fill", "#707070")
-//     })
-//     .on("click", function() {
-//         window.location.href = "http://salathegroup.com";
-//     })
-//     .text("Salathé Group | 2014")
-
-
 homeToTutorial();
 
 function homeToTutorial() {
@@ -275,7 +150,7 @@ function homeToTutorial() {
         .style("right", "0px")
         .text("More About Vax...")
         .on("click", function() {
-            window.location.href = '/about'
+            window.location.href = 'faq.html'
         })
 
     advanceTutorial()
@@ -1114,7 +989,7 @@ function menuConfirm() {
                     .text("VAX!")
                     .style("cursor", "pointer")
                     .on("click", function() {
-                        window.location.href = '/'
+                        window.location.href = 'index.html'
                     })
 
                 d3.select(".vaxLogoDiv")
@@ -1188,7 +1063,7 @@ function initTutorial() {
         .text("VAX!")
         .style("cursor", "pointer")
         .on("click", function() {
-            window.location.href = '/'
+            window.location.href = 'index.html'
         })
 
 

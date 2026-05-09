@@ -1,3 +1,17 @@
+.faqBack {
+  display: inline-block;
+  font-family: "Nunito";
+  font-size: 16px;
+  font-weight: 400;
+  color: #2692F2;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.faqBack:hover {
+  color: #707070;
+}
+
 .faqTitle {
   font-family: "Nunito";
   font-size: 32px;

@@ -1,0 +1,31 @@
+{
+  "title": "Vax!",
+  "subtitle": "Stop a contagion spreading through a social network by vaccinating and quarantining.",
+  "type": "PLAY_LEARN",
+  "level": "lower_undergrad",
+  "domain": ["Interdisciplinary"],
+  "field": ["Complexity Science"],
+  "subdiscipline": ["Network science"],
+  "mode": "desktop",
+  "keywords": [
+    "vaccination",
+    "epidemics",
+    "social network",
+    "herd immunity",
+    "contagion",
+    "quarantine",
+    "disease modeling",
+    "network centrality",
+    "outbreak"
+  ],
+  "learning_goals": [
+    "Explain how vaccinating well-connected (high-centrality) individuals in a social network reduces overall outbreak size through herd immunity.",
+    "Distinguish vaccination (pre-outbreak prevention) from quarantine (mid-outbreak containment) as epidemic interventions.",
+    "Predict qualitatively how the structure of a contact network — hubs, clustering, average degree — shapes the trajectory of a contagion."
+  ],
+  "creator": "Ellsworth Campbell, Isaac Bromley, et al.",
+  "institution": "Salathé Group, Penn State University (original); Digital Epidemiology Lab, EPFL (publishing org)",
+  "notes": "Vax! was originally created by Ellsworth Campbell as a PhD student in the Salathé Group at Penn State University, with graphic design by Isaac Bromley, and released by the Digital Epidemiology Lab (https://github.com/digitalepidemiologylab/VaxGame) under a Creative Commons Attribution-ShareAlike 4.0 license. The original was a Ruby on Rails application; it was later refactored into a fully static HTML/CSS/JS app by GitHub user rwilliams (https://github.com/cadms/VaxGame), which is the direct upstream of this Galvoro capsule. This Galvoro fork makes only the changes necessary to satisfy the Galvoro Capsule Contribution Spec (removal of Rails artifacts and external link navigation, removal of the separate Herd Immunity module, and addition of capsule metadata) and does not modify the gameplay, simulation logic, or visual design of the original. All gameplay credit belongs to the original authors.",
+  "external_link": "https://github.com/digitalepidemiologylab/VaxGame",
+  "license": "CC-BY-SA-4.0"
+}

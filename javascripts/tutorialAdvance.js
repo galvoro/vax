@@ -311,7 +311,7 @@ function restoreNetworkLesson() {
         .text("VAX!")
         .style("cursor", "pointer")
         .on("click", function() {
-            window.location.href = '/'
+            window.location.href = 'index.html'
         })
 
     startButton = d3.select(".guideTextSVG").append("text")
@@ -1731,7 +1731,7 @@ function guideRails(back) {
         d3.select(".nextArrow")
             .text("Play!")
             .on("click", function() {
-                window.location.href = "/game.html"
+                window.location.href = "game.html"
             })
     }
 

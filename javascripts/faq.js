@@ -9,7 +9,7 @@ d3.select("body").append("div")
     .text("VAX!")
     .style("cursor", "pointer")
     .on("click", function() {
-        window.location.href = '/';
+        window.location.href = 'index.html';
     });
 
 //d3.select("body").append("div")

@@ -167,8 +167,9 @@ d3.select(".homeSVG").append("text")
 
 d3.select(".homeSVG").append("text")
     .attr("class", "homeTutorial")
-    .attr("x", 802)
+    .attr("x", 880)
     .attr("y", 525)
+    .attr("text-anchor", "end")
     .attr("fill", "#707070")
     .on("mouseover", function(d) {
 
@@ -178,17 +179,18 @@ d3.select(".homeSVG").append("text")
     .on("mouseout", function(d) {
         d3.select(this).style("fill", "#707070")
     })
-    .text("Tour >")
+    .text("Tour (Learn) >")
     .on("click", function() {
-        window.location.href = '/tour.html'
+        window.location.href = 'tour.html'
    })
 
 d3.select(".homeSVG").append("text")
     .attr("class", "homeGame")
-    .attr("x", 744)
+    .attr("x", 880)
     .attr("y", 558)
+    .attr("text-anchor", "end")
     .attr("fill", "#707070")
-    .text("Full Game >")
+    .text("Game (Play) >")
     .on("mouseover", function(d) {
 
         d3.select(this).style("fill", "#2692F2")
@@ -198,28 +200,7 @@ d3.select(".homeSVG").append("text")
         d3.select(this).style("fill", "#707070")
     })
     .on("click", function() {
-        window.location.href = '/game.html'
-    })
-
-d3.select(".homeSVG").append("text")
-    .attr("class", "homeHI")
-    .attr("x", 694)
-    .attr("y", 590)
-    .attr("fill", "#707070")
-    .attr("font-size", "23px")
-    .style("font-family", "Nunito")
-    .style("cursor", "pointer")
-    .text("Herd Immunity >")
-    .on("mouseover", function(d) {
-
-        d3.select(this).style("fill", "#2692F2")
-
-    })
-    .on("mouseout", function(d) {
-        d3.select(this).style("fill", "#707070")
-    })
-    .on("click", function() {
-        window.location.href = '/herdImmunity.html'
+        window.location.href = 'game.html'
     })
 
 d3.select(".homeSVG").append("text")
@@ -240,7 +221,7 @@ d3.select(".homeSVG").append("text")
         d3.select(this).style("fill", "#707070")
     })
     .on("click", function() {
-        window.location.href = '/scenario.html'
+        window.location.href = 'scenario.html'
     })
 
 d3.select(".homeSVG").append("text")
@@ -261,7 +242,7 @@ d3.select(".homeSVG").append("text")
         d3.select(this).style("fill", "#707070")
     })
     .on("click", function() {
-        window.location.href = '/faq.html'
+        window.location.href = 'faq.html'
     })
 
 d3.select(".homeSVG").append("text")

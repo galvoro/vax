@@ -1,41 +1,48 @@
-### Playable demo [here](https://vaxgame.onrender.com/)
+# Vax! — Galvoro Capsule Fork
 
-# Welcome to Vax!
+This repository is a Galvoro Capsule fork of [cadms/VaxGame](https://github.com/cadms/VaxGame), itself a static refactor of the original Ruby-on-Rails-based Vax! by the [Digital Epidemiology Lab / Salathé Group](https://github.com/digitalepidemiologylab/VaxGame). It is published as a single, self-contained capsule on Galvoro at `<slug>.capsules.galvoro.app`.
 
-Vax is a game about epidemic prevention. It's also an interactive learning
-environment designed to visualize a process that strains our imagination:
+Vax! is a game about epidemic prevention. Players prepare for an outbreak by vaccinating a network that resembles human social networks; after distributing vaccines, an infectious outbreak begins to spread and the player must quell the epidemic by quarantining individuals at risk of becoming infected.
 
-*A contagion spreading across a network*
+## Attribution chain
 
-Players are tasked to prepare for an outbreak by vaccinating a network that
-resembles human social networks. After distributing vaccines, an infectious
-outbreak begins to spread and the player is tasked to quell the epidemic by
-quarantining individuals at risk of becoming infected.
+1. **Original** — Ellsworth Campbell, PhD student in the Salathé Group at Penn State University. Graphic design by Isaac Bromley. Released by the Digital Epidemiology Lab at EPFL: <https://github.com/digitalepidemiologylab/VaxGame>. Originally a Ruby-on-Rails web application.
+2. **Static refactor** — `cadms/VaxGame` <https://github.com/cadms/VaxGame> stripped out the Rails server and turned Vax! into a standalone HTML/CSS/JS app. This is the direct upstream of the present fork.
+3. **This Galvoro fork** — packages the static app as a Galvoro Capsule per the [Capsule Contribution Spec](capsule-spec.md). Gameplay, simulation logic, and visual design are unchanged from upstream.
 
-Vax! is a puzzle-game infused with chance that was inspired by real-world
-challenges, infectious disease modeling, and addictively rewarding gameplay.
+## License
 
-It was developed by Ellsworth Campbell, a PhD student in the Salathé Group
-at Penn State University. Graphic design by Isaac Bromley. Released under a
-Creative Commons Attribution-ShareAlike license.
+CC-BY-SA-4.0 (see `LICENSE`). The license is inherited from the original Salathé Group release and propagated through the cadms refactor; this fork does not change it. ShareAlike applies — derivative works must use the same license.
 
-## Why did you make Vax?
+## Deviations from cadms/VaxGame upstream
 
-I wanted Vax to be all of the following, and more...
+These changes were applied solely to satisfy Galvoro's Capsule Contribution Spec. None of them affect gameplay.
 
-1. An opportunity to unify two disparate passions: video games and science.
-2. A tool to introduce a general audience to concepts related to infectious disease dynamics.
-3. A data-driven method to illustrate how contact networks can affect infectious disease dynamics.
-4. A widely accessible interactive framework to visualize, simulate, and *experience* an infectious processes spreading across/through a contact network.
-5. A platform for a fledgling scientist, such as myself, to gain the experience and skills to do scientific outreach in the digital realm.
+- **Removed the standalone Herd Immunity module** (`herdImmunity.html`, `stylesheets/herdImmunity.css`, and the supporting `javascripts/herdImmunity.js`, `hiBarChart.js`, `hiNET.js`, `hiScript.js`, `hiSims.js`). A capsule teaches one concept; the herd-immunity exploration is conceptually a separate capsule.
+- **Removed all Rails artifacts** that survived the cadms refactor: `400.html`, `404.html`, `406-unsupported-browser.html`, `422.html`, `500.html`, and the Rails-style `.gitignore` content (replaced with a minimal dev-time-only one).
+- **Removed the social-share buttons** (Facebook, Twitter, Google+) from the Game and Scores screens. Outbound top-level navigation is blocked in the capsule sandbox iframe, the `vax.herokuapp.com` host they referenced no longer exists, and Google+ has been retired. The associated `images/{facebook,twitter,googleplus}_icon.png` files are also removed.
+- **Converted external hyperlinks to plain text** in the FAQ. URLs that genuinely help readers (the Coursera Epidemics course, the CDC quarantine page) are kept as plain-text URLs; brand/affiliation links (Twitter, LinkedIn, salathegroup.com, psu.edu, rubyonrails.org, d3js.org, etc.) are dropped entirely. The cadms upstream GitHub link is preserved through the attribution chain in this README and in `capsule.json`.
+- **Replaced absolute URL paths** (`window.location.href = '/'`, `'/game.html'`, `'/scenario'`, etc.) with relative file references (`'index.html'`, `'game.html'`, `'scenario.html'`). Galvoro serves capsules from versioned subpaths (`<slug>.capsules.galvoro.app/v1/`); absolute paths break versioned URL routing.
+- **Stripped commented-out analytics infrastructure** from `faq.html` (Google Analytics blurb and an `iubenda` privacy-policy script). The code was already disabled in cadms but the strings still shipped and would have tripped Galvoro's static-check scanner.
+- **Added `capsule.json`** at the repo root with the metadata Galvoro requires (title, learning goals, level, fields, license, etc.).
 
-## How was Vax built?
+## Known issues / not yet addressed
 
-Before Vax, the extent of my web development experience is encompassed by this amazing [Ruby on Rails tutorial](http://ruby.railstutorial.org). Therefore this web application is minimalist by-design. I've employed a few libraries, such as [d3.js](http://d3js.org), [jquery](http://jquery.com), and [jqueryui](http://jqueryui.com). I've also employed a few gems to handle cookies, errors, and styling.
+These are flagged for a follow-up cleanup pass; they do not affect the gameplay this fork ships:
 
-#### Updates from [original](https://github.com/digitalepidemiologylab/VaxGame) game
-* Ripped out all Ruby on Rails code and made it a standalone html/js app.
-* Fixed layout issues for modern browsers.
-* Added links to FAQ and Scenarios
-* Removed progression aspects of scenarios and unlocked all playable options
-* Oringally updated to latest Ruby and Rails before deciding not to use it. Code for that can be found [here](https://github.com/cadms/VaxGame/tree/rails-legacy).
+- `images/pop.wav` and `images/vax_cursor.cur` use file extensions outside the §4 capsule allowlist (only `.mp3` / `.ogg` for audio, no `.cur`). They will need to be re-encoded or removed before Galvoro static-check passes.
+- `tutorial.js` references an audio element ID that depends on the `.wav` above — if the audio file is removed, the reference should be cleaned up too.
+
+## Running locally
+
+The capsule has no build step. From the repo root:
+
+```
+python3 -m http.server 8000
+```
+
+Then open <http://localhost:8000/>. Any plain static file server works equivalently.
+
+## Capsule spec
+
+The spec this fork targets is in `capsule-spec.md` at the repo root. When that document and this README disagree, the spec wins.
