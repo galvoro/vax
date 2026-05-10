@@ -4,8 +4,12 @@ body {
 
 #hiSVG {
   display: block;
-  height: calc(100vh - 110px) !important;
-  max-height: 1080px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: calc(100vh - 230px) !important;
+  max-height: 850px;
 }
 
 #hiNav {
@@ -56,16 +60,18 @@ body {
 
 #hiGuideText {
   position: absolute;
-  width: 80%;
-  margin: 0 auto;
-  margin-left: 100px;
-  margin-top: 50px;
+  left: 100px;
+  right: 100px;
+  bottom: 110px;
+  width: auto;
+  height: 100px;
+  margin: 0;
   line-height: 25px;
   vertical-align: middle;
   text-align: center;
   font-family: "Nunito";
   color: #707070;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
 
 }
