@@ -166,35 +166,18 @@ d3.select(".homeSVG").append("text")
     .text("A game about epidemic prevention.")
 
 d3.select(".homeSVG").append("text")
-    .attr("class", "homeTutorial")
+    .attr("class", "homePrimary")
     .attr("x", 880)
-    .attr("y", 525)
+    .attr("y", 510)
     .attr("text-anchor", "end")
     .attr("fill", "#707070")
+    .attr("font-size", "44px")
+    .style("font-family", "Nunito")
+    .style("font-weight", 700)
+    .style("cursor", "pointer")
+    .text("PLAY >")
     .on("mouseover", function(d) {
-
         d3.select(this).style("fill", "#2692F2")
-
-    })
-    .on("mouseout", function(d) {
-        d3.select(this).style("fill", "#707070")
-    })
-    .text("Tour (Learn) >")
-    .on("click", function() {
-        window.location.href = 'tour.html'
-   })
-
-d3.select(".homeSVG").append("text")
-    .attr("class", "homeGame")
-    .attr("x", 880)
-    .attr("y", 558)
-    .attr("text-anchor", "end")
-    .attr("fill", "#707070")
-    .text("Game (Play) >")
-    .on("mouseover", function(d) {
-
-        d3.select(this).style("fill", "#2692F2")
-
     })
     .on("mouseout", function(d) {
         d3.select(this).style("fill", "#707070")
@@ -204,18 +187,58 @@ d3.select(".homeSVG").append("text")
     })
 
 d3.select(".homeSVG").append("text")
-    .attr("class", "homeHI")
-    .attr("x", 748)
-    .attr("y", 622)
+    .attr("class", "homePrimary")
+    .attr("x", 880)
+    .attr("y", 565)
+    .attr("text-anchor", "end")
     .attr("fill", "#707070")
-    .attr("font-size", "23px")
+    .attr("font-size", "44px")
+    .style("font-family", "Nunito")
+    .style("font-weight", 700)
+    .style("cursor", "pointer")
+    .text("LEARN >")
+    .on("mouseover", function(d) {
+        d3.select(this).style("fill", "#2692F2")
+    })
+    .on("mouseout", function(d) {
+        d3.select(this).style("fill", "#707070")
+    })
+    .on("click", function() {
+        window.location.href = 'herdImmunity.html'
+    })
+
+d3.select(".homeSVG").append("text")
+    .attr("class", "homeHI")
+    .attr("x", 880)
+    .attr("y", 625)
+    .attr("text-anchor", "end")
+    .attr("fill", "#707070")
+    .attr("font-size", "21px")
+    .style("font-family", "Nunito")
+    .style("cursor", "pointer")
+    .text("Tutorial >")
+    .on("mouseover", function(d) {
+        d3.select(this).style("fill", "#2692F2")
+    })
+    .on("mouseout", function(d) {
+        d3.select(this).style("fill", "#707070")
+    })
+    .on("click", function() {
+        window.location.href = 'tour.html'
+    })
+
+d3.select(".homeSVG").append("text")
+    .attr("class", "homeHI")
+    .attr("x", 880)
+    .attr("y", 655)
+    .attr("text-anchor", "end")
+    .attr("fill", "#707070")
+    .attr("font-size", "21px")
     .style("font-family", "Nunito")
     .style("cursor", "pointer")
     .text("Scenarios >")
     .on("mouseover", function(d) {
-
         d3.select(this).style("fill", "#2692F2")
-
     })
     .on("mouseout", function(d) {
         d3.select(this).style("fill", "#707070")
@@ -226,17 +249,16 @@ d3.select(".homeSVG").append("text")
 
 d3.select(".homeSVG").append("text")
     .attr("class", "homeHI")
-    .attr("x", 800)
-    .attr("y", 654)
+    .attr("x", 880)
+    .attr("y", 685)
+    .attr("text-anchor", "end")
     .attr("fill", "#707070")
-    .attr("font-size", "23px")
+    .attr("font-size", "21px")
     .style("font-family", "Nunito")
     .style("cursor", "pointer")
     .text("FAQ >")
     .on("mouseover", function(d) {
-
         d3.select(this).style("fill", "#2692F2")
-
     })
     .on("mouseout", function(d) {
         d3.select(this).style("fill", "#707070")
@@ -247,10 +269,11 @@ d3.select(".homeSVG").append("text")
 
 d3.select(".homeSVG").append("text")
     .attr("class", "homeHI")
-    .attr("x", 694)
-    .attr("y", 686)
+    .attr("x", 880)
+    .attr("y", 715)
+    .attr("text-anchor", "end")
     .attr("fill", "#707070")
-    .attr("font-size", "23px")
+    .attr("font-size", "21px")
     .style("font-family", "Nunito")
     .style("cursor", "pointer")
     .text("Clear Progress >")
@@ -266,7 +289,7 @@ d3.select(".homeSVG").append("text")
 
 d3.select(".homeSVG").append("text")
     .attr("x", 718)
-    .attr("y", 718)
+    .attr("y", 760)
     .attr("fill", "#707070")
     .text("Salathé Group | 2014")
 
